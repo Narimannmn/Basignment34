@@ -31,7 +31,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const viewsPath = path.join(__dirname, "views");
 app.set("views", viewsPath);
-console.log(viewsPath)
 app.set("view engine", "ejs");
 
 
@@ -49,7 +48,7 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(routes);
+app.use('', routes);
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
